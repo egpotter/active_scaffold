@@ -16,7 +16,7 @@ end
 group :test do
   gem "shoulda", ">= 0"
   gem "simplecov", ">= 0"
-  gem "mocha"
+  gem "mocha", require: false
   gem "rails", "~> 4.0.0"
   platforms :jruby do
     gem 'activerecord-jdbcsqlite3-adapter'

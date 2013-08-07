@@ -114,7 +114,7 @@ class ConstraintsTest < Test::Unit::TestCase
     # has_one (vs belongs_to)
     assert_constraint_condition({:subscription => 5}, [{'subscriptions.id' => 5}], 'find the user with subscription #5')
     # habtm (vs habtm)
-    assert_constraint_condition({:roles => 4}, [{'roles_users.role_id' => 4}], 'find all users with role #4')
+    assert_constraint_condition({:roles => 4}, [{'.role_id' => 4}], 'find all users with role #4')
     # has_one (vs polymorphic)
     assert_constraint_condition({:address => 11}, [{'addresses.id' => 11}], 'find the user with address #11')
     # reverse of a has_many :through
